@@ -1,20 +1,17 @@
-#include <stdio.h>
-#include <stdlib.h>
+#ifndef HASH_TABLE_H
+#define HASH_TABLE_H
+	#include "../include/哈希表.h"
+#endif
 
-// 哈希表节点结构
-typedef struct HashNode
-{
-	char key;
-	short value;
-	struct HashNode* previous;
-} HashNode;
+#ifndef XIAOXIAOLE_H
+#define XIAOXIAOLE_H
+	#include "../include/字符消消乐之按顺序消除更多者胜.h"
+#endif
 
-// 哈希表结构
-#define HASHSIZE 7
-typedef struct
+void HashTable_init(HashTable* self)
 {
-	HashNode* table[HASHSIZE];
-} HashTable;
+	memset(self->table, 0, sizeof (self->table));	
+}
 
 
 void HashNode_show(HashNode* self)
@@ -22,10 +19,12 @@ void HashNode_show(HashNode* self)
 	printf("(key,value):(%c,%d)\n", self->key, self->value);	
 }
 
+
 short hash(char key)
 {
 	return ( short )key % HASHSIZE;
 }
+
 
 void HashTable_create(HashTable* self, char key, short value)
 {
@@ -54,10 +53,6 @@ short* HashTable_search(HashTable* self, char key)
 	return NULL;
 }
 
-void HashTable_init(HashTable* self)
-{
-	memset(self->table, 0, sizeof (self->table));	
-}
 
 /*
 void main()
