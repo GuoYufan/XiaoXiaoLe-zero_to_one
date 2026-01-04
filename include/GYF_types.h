@@ -1,0 +1,1 @@
+typedef struct 调试模式 GYF_Debug_Mode;

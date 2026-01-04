@@ -1,21 +1,21 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include "哈希表_types.h"
 
-
-// 哈希表节点结构
-typedef struct HashNode
+struct HashNode
 {
 	char key;
 	short value;
 	struct HashNode* previous;
-} HashNode ;
+};
 
 // 哈希表结构
 #define HASHSIZE 7
-typedef struct
+struct HashTable
 {
 	HashNode* table[HASHSIZE];
-} HashTable ;
+};
+
 
 void HashTable_init(HashTable* self);
 void HashNode_show(HashNode* self);
