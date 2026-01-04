@@ -1,0 +1,1 @@
+./TheChar_update.c ./TheWord_show.c ./TheWord_init.c ./getString_random.c ./main.c ./哈希表.c ./TheWord_update.c ./TheWord_run.c ./统一free.c ./TheChar_show.c 
