@@ -1,8 +1,5 @@
 #include <stdio.h>
-#ifndef XIAOXIAOLE_H
-#define XIAOXIAOLE_H
-	#include "../include/字符消消乐之按顺序消除更多者胜.h"
-#endif
+#include "../include/XiaoXiaoLe.h"
 
 void TheWord_show_内容(TheWord *self)
 {
@@ -15,12 +12,14 @@ void TheWord_show_每个字符情况(TheWord *self)
 {
 	TheChar** p_每个字符情况 = self->每个字符情况;
 
-	printf("《在字符串%s中》\n", self->内容);
-	for (short i=0; i < self->长度; i++ )
+	printf("《在字符串%s中记录了%d个字符情况》\n",
+		self->内容,
+		self->记录了几个字符情况);
+	for (short i=0; i < self->记录了几个字符情况; i++ )
 	{
 		TheChar_show(*p_每个字符情况);
 		p_每个字符情况++;
-	}	
+	}
 }
 
 // 显示可消除内容在自身位置与内容相关信息

@@ -1,14 +1,12 @@
-#ifndef XIAOXIAOLE_H
-#define XIAOXIAOLE_H
-	#include "../include/字符消消乐之按顺序消除更多者胜.h"
-#endif
+#include "../include/XiaoXiaoLe.h"
 
 // 感觉用“上次消除后首次出现在对方哪个位置”来表示“该字符是否可消除”有点险。
 void TheWord_update(TheWord* self)
 {
-	// 将这一波每个字符情况被所在字符串所需要的信息收集到后者中
+	// 将这一波每个字符情况被所在字符串所需要的信息收集到后者中。
+	// 事实上不需要每个字符：而是值得占用检查记录的就够了，不需要浪费。
 	TheChar** p_每个字符情况 = self->每个字符情况;	
-	for (short i=0; i < self->长度; i++, p_每个字符情况++)
+	for (short i=0; i < self->记录了几个字符情况; i++, p_每个字符情况++)
 	{
 		// 如果该字符可消除
 		if ( (*p_每个字符情况) -> 首次出现在对方哪个位置 != -1)

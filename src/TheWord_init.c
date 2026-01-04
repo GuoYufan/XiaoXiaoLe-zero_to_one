@@ -1,8 +1,5 @@
 #include <stdlib.h>
-#ifndef XIAOXIAOLE_H
-#define XIAOXIAOLE_H
-	#include "../include/字符消消乐之按顺序消除更多者胜.h"
-#endif
+#include "../include/XiaoXiaoLe.h"
 
 void TheWord_init(TheWord *self, const char* content, const char* name)
 {
@@ -15,6 +12,7 @@ void TheWord_init(TheWord *self, const char* content, const char* name)
 	self->可消除内容列表 = malloc(sizeof ( char ) * self->长度);	
 	self->可消除数量 = 0;
 	self->每个字符情况 = malloc( sizeof (TheChar*) * self->长度 );
+	self->记录了几个字符情况 = 0;
 	
 	self->名称 = malloc(sizeof (char ) * strlen(name) + 1);
 	strcpy(self->名称, name);

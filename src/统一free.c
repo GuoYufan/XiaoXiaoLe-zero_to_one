@@ -1,7 +1,5 @@
-#ifndef XIAOXIAOLE_H
-#define XIAOXIAOLE_H
-	#include "../include/字符消消乐之按顺序消除更多者胜.h"
-#endif
+#include <stdlib.h>
+#include "../include/XiaoXiaoLe.h"
 
 void 统一free(TheWord* self)
 {

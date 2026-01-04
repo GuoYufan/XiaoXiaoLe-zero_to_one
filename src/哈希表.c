@@ -1,12 +1,5 @@
-#ifndef HASH_TABLE_H
-#define HASH_TABLE_H
-	#include "../include/哈希表.h"
-#endif
+#include "../include/哈希表.h"
 
-#ifndef XIAOXIAOLE_H
-#define XIAOXIAOLE_H
-	#include "../include/字符消消乐之按顺序消除更多者胜.h"
-#endif
 
 void HashTable_init(HashTable* self)
 {
@@ -75,4 +68,3 @@ void main()
 	}
 }
 */
- 

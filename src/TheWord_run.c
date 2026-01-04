@@ -1,12 +1,5 @@
-#ifndef HASH_TABLE_H
-#define HASH_TABLE_H
-	#include "../include/哈希表.h"
-#endif
-
-#ifndef XIAOXIAOLE_H
-#define XIAOXIAOLE_H
-	#include "../include/字符消消乐之按顺序消除更多者胜.h"
-#endif
+#include "../include/XiaoXiaoLe.h"
+#include "../include/哈希表.h"
 
 // 统一运行整个流程
 void TheWord_run(TheWord* self, char* 对方内容)
@@ -16,7 +9,7 @@ void TheWord_run(TheWord* self, char* 对方内容)
 	HashTable_init(&ht);
 	
 	// 记录该字符串中每个字符情况（相对于对手）
-	if ( !TheChar_update_按顺序映射关系(self->每个字符情况, self->内容, 对方内容, &ht))
+	if ( !TheChar_update_按顺序映射关系(self, 对方内容, &ht))
 	{
 		return;
 	}
