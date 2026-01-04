@@ -1,42 +1,35 @@
 #include <stdbool.h>
+#include "XiaoXiaoLe_types.h"
+#include "哈希表_types.h"
 
-#ifndef HASH_TABLE_H
-#define HASH_TABLE_H
-	#include "../include/哈希表.h"
-#endif
-
-
-/*typedef struct 字符串内当前位置情况 TheChar;
-typedef struct 一段字符串情况 TheWord;
-typedef struct 字符消消乐 Game;
-*/
-
-typedef struct 字符串内当前位置情况
+struct 字符串内当前位置情况
 {
 	// 该索引到的内容如果出现在对方，则正常显示
 	// 如果不出现在对方，则显示为占位符	
 	char 内容;
 	short 在自身哪个位置;
 	short 首次出现在对方哪个位置;	
-} TheChar;
+};
 
 
-typedef struct 一段字符串情况
+struct 一段字符串情况
 {
 	char* 内容;
 	short 长度;
 	short* 可消除内容在自身位置列表;	
 	char* 可消除内容列表;
+	// 首次出现在对方位置：以相同内容最近一次消除点的下一位作为检查起点
 	short* 可消除内容首次出现在对方位置列表;
 	short 可消除数量;
 	TheChar** 每个字符情况;
+	short 记录了几个字符情况;
 	
 	char* 名称;
-} TheWord;
+};
 
 
 // TheChar
-bool TheChar_update_按顺序映射关系(TheChar** 每个字符情况, char* 我方, char* 对方, HashTable* ht);
+bool TheChar_update_按顺序映射关系(TheWord* 我方, char* 对方, HashTable* ht);
 // 显示该字符情况
 void TheChar_show(TheChar *self);
 
